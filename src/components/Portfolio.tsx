@@ -57,41 +57,36 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background to-secondary/50 py-20 md:py-32">
+      <section className="relative py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            {/* Left Content */}
             <div className="animate-fade-in">
-              <div className="mb-6 flex justify-center">
-                <div className="relative">
-                  <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Code2 className="w-16 h-16 text-primary" />
-                  </div>
-                  <div className="absolute -top-2 -right-2">
-                    <Sparkles className="w-8 h-8 text-primary animate-pulse" />
-                  </div>
-                </div>
+              <div className="mb-6">
+                <h2 className="text-lg font-medium text-muted-foreground mb-2">Hey There,</h2>
+                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                  I'm <span className="text-primary">Sandrine</span>
+                </h1>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-                Sandrine
-              </h1>
-              <p className="text-xl md:text-2xl text-primary font-semibold mb-4">
-                Frontend Engineer
+              
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                I create smart apps with smart code. Frontend engineer passionate about 
+                building beautiful, performant web applications.
               </p>
-              <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                I create smart apps with smart code
-              </p>
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
+              
+              <div className="flex items-center gap-2 text-muted-foreground mb-8">
                 <MapPin className="w-4 h-4" />
                 <span>Paris / Remote</span>
               </div>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg">
+              
+              <div className="flex flex-wrap gap-4 mb-8">
+                <Button asChild size="lg" className="rounded-full">
                   <a href="mailto:dasilva.sandrine31@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
                     Get in touch
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" asChild className="rounded-full">
                   <a href="https://github.com/sandrine-ds" target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4 mr-2" />
                     GitHub
@@ -99,88 +94,149 @@ export default function Portfolio() {
                 </Button>
               </div>
             </div>
+
+            {/* Right Content - Profile */}
+            <div className="relative animate-slide-in">
+              <div className="relative w-full max-w-md mx-auto">
+                {/* Background decorative elements */}
+                <div className="absolute inset-0 bg-secondary rounded-full transform rotate-12 scale-110"></div>
+                <div className="absolute inset-0 bg-primary/20 rounded-full transform -rotate-6 scale-95"></div>
+                
+                {/* Profile image placeholder */}
+                <div className="relative w-80 h-80 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <Code2 className="w-32 h-32 text-primary-foreground" />
+                </div>
+                
+                {/* Stats */}
+                <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-foreground">4+</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                </div>
+                
+                <div className="absolute -top-6 -right-6 bg-card rounded-2xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-foreground">20+</div>
+                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-background">
+      {/* Services Section */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="animate-slide-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Passionate frontend engineer with over 4 years of experience building beautiful, 
-                    performant web applications. I love turning complex problems into simple, 
-                    elegant solutions that users actually enjoy using.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    When I'm not coding, you'll find me exploring the latest design trends, 
-                    contributing to open source projects, or enjoying a good coffee while 
-                    brainstorming the next big idea.
-                  </p>
-                </CardContent>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">What do I help?</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                I turn your ideas into digital products and help 
+                your problems solving through development solutions.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 group">
+                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Code2 className="w-6 h-6 text-secondary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Website Design</h3>
+                <p className="text-muted-foreground mb-4">Frontend development</p>
+                <Badge variant="secondary" className="text-xs">24 Projects</Badge>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 group">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Mobile App Design</h3>
+                <p className="text-muted-foreground mb-4">UI Projects</p>
+                <Badge variant="secondary" className="text-xs">41 Projects</Badge>
+              </Card>
+              
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 group">
+                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Github className="w-6 h-6 text-accent-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Brand Identity</h3>
+                <p className="text-muted-foreground mb-4">UI Projects</p>
+                <Badge variant="secondary" className="text-xs">24 Projects</Badge>
               </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-20 bg-secondary/30">
+      {/* Stats Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Skills & Technologies</h2>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {skills.map((skill, index) => (
-                <Badge 
-                  key={skill} 
-                  variant="secondary" 
-                  className="text-sm py-2 px-4 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {skill}
-                </Badge>
-              ))}
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="animate-fade-in">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">285+</div>
+                <div className="text-muted-foreground">Projects Completed</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">190+</div>
+                <div className="text-muted-foreground">Happy Clients</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">4+</div>
+                <div className="text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">12</div>
+                <div className="text-muted-foreground">Technologies</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20 bg-background">
+      {/* Latest Works Section */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Featured Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">My Latest Works</h2>
+              <p className="text-lg text-muted-foreground">
+                Perfect solutions for digital experience
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <CardHeader>
-                    <CardTitle className="group-hover:text-primary transition-colors">
+                <Card key={project.title} className="group hover:shadow-xl transition-all duration-300 animate-fade-in overflow-hidden" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <ExternalLink className="w-4 h-4 text-primary-foreground" />
+                      </div>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
-                    </CardTitle>
-                    <CardDescription>
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
                       {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                      {project.tech.slice(0, 3).map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs">
                           {tech}
                         </Badge>
                       ))}
                     </div>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline" asChild>
+                      <Button size="sm" variant="outline" asChild className="rounded-full">
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="w-3 h-3 mr-1" />
                           Code
                         </a>
                       </Button>
-                      <Button size="sm" asChild>
+                      <Button size="sm" asChild className="rounded-full">
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-3 h-3 mr-1" />
                           Demo
@@ -195,31 +251,41 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section className="py-20 bg-secondary/30">
+      {/* Work Experience Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Experience</h2>
-            <div className="space-y-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">My Work Experience</h2>
+              <p className="text-lg text-muted-foreground">
+                Building digital solutions across various industries
+              </p>
+            </div>
+            
+            <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <Card key={exp.title} className="animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div key={exp.title} className="flex gap-6 animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-primary-foreground rounded-full"></div>
+                    </div>
+                    {index < experiences.length - 1 && (
+                      <div className="w-px h-24 bg-border"></div>
+                    )}
+                  </div>
+                  <div className="flex-1 pb-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div>
-                        <CardTitle className="text-xl">{exp.title}</CardTitle>
-                        <CardDescription className="text-base font-medium text-primary">
-                          {exp.company}
-                        </CardDescription>
+                        <h3 className="text-xl font-semibold">{exp.title}</h3>
+                        <p className="text-primary font-medium">{exp.company}</p>
                       </div>
-                      <Badge variant="outline" className="self-start md:self-center mt-2 md:mt-0">
+                      <Badge variant="secondary" className="self-start md:self-center mt-2 md:mt-0">
                         {exp.period}
                       </Badge>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{exp.description}</p>
-                  </CardContent>
-                </Card>
+                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -227,22 +293,23 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Let's Work Together</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Ready to bring your ideas to life? I'm always excited to work on new projects 
-              and collaborate with amazing people.
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
+              Let's make something amazing together!
+            </h2>
+            <p className="text-lg text-primary-foreground/80 mb-8">
+              Start by saying hi
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+              <Button size="lg" variant="secondary" asChild className="rounded-full">
                 <a href="mailto:dasilva.sandrine31@gmail.com">
                   <Mail className="w-4 h-4 mr-2" />
                   Email Me
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild className="rounded-full border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 <a href="https://www.linkedin.com/in/sandrine-da-silva/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn
@@ -254,7 +321,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary/50 py-8">
+      <footer className="bg-card py-8">
         <div className="container mx-auto px-4">
           <div className="text-center text-muted-foreground">
             <p>&copy; 2024 Sandrine Da Silva. Built with React & Tailwind CSS.</p>
